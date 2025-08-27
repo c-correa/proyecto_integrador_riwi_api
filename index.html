@@ -1,83 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawCare</title>
-    <link rel="stylesheet" href="/src/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawCare</title>
+  <link rel="stylesheet" href="./src/css/stylesi.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Sección izquierda -->
-        <div class="left-section">
-            <div class="header">
-                <div class="logo-container">
-                    <img src="/public/img/file_00000000749861f89afa72857b0d7f69.png" alt="PawCare Logo" class="logo">
-                    <h1>PawCare</h1>
-                </div>
-            </div>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">🐾 PawCare</div>
+    <a href="/src/views/register.html" class="btn-register">Inscribete</a>
+  </header>
 
-            <div class="brand-section">
-                <h2 class="brand-title">PAWCARE</h2>
-            </div>
-
-            <div class="promo-card">
-                <div class="promo-content">
-                    <img src="/public/img/artemisa_2.webp" alt="Mascota PawCare" class="mascot">
-                    <div class="promo-text">
-                        <h3>DALE UN VISTAZO</h3>
-                        <p>Ayúdanos a cuidar a tu amigo</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer">
-                <div class="footer-content">
-                    <img src="/public/img/file_00000000749861f89afa72857b0d7f69.png" alt="PawCare Logo" class="footer-logo">
-                    <span class="copyright">© 2025</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección derecha -->
-        <div class="right-section">
-            <div class="login-overlay">
-                <div class="login-card">
-                    <h2>Inicia sesión en PawCare!</h2>
-                    <p>Accede a tu cuenta y gestiona fácilmente tus reservas</p>
-
-                    <form class="login-form">
-                        <div class="form-group">
-                            <label for="username">Usuario</label>
-                            <input type="text" id="username" name="username" placeholder="Johndoe">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <div class="password-input">
-                                <input type="password" id="password" name="password" placeholder="8547_John_doe">
-                                <button type="button" class="toggle-password" onclick="togglePassword()">
-                                    <img src="/public/img/eye-fill.svg" alt="Mostrar contraseña" class="eye-icon" id="eye-show">
-                                    <img src="/public/img/eye-slash.svg" alt="Ocultar contraseña" class="eye-icon hidden" id="eye-hide">
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="forgot-password">
-                            <a href="#">¿Olvidaste tu contraseña?</a>
-                        </div>
-
-                        <button type="submit" class="login-button">
-                            Iniciar sesión
-                        </button>
-                        <div class="register-link">
-                            <p>¿No tienes cuenta? <a href="/src/views/register.html">Regístrate aquí</a></p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>“Bienvenido a PawCare”</h1>
+      <p>Guarderías para mascotas • Encuentra el mejor lugar para tu mascota</p>
+      <form class="search-bar">
+        <input type="search" placeholder="Search">
+        <button type="submit">Buscar</button>
+      </form>
     </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards">
+    <div class="card">
+      <img src="../img/Image.png" alt="Logo Guardería">
+      <h3>Prados caninos</h3>
+      <p>Cra. 46 #90 - 123, B/ro. Centro Histórico, Vía las Villas, Barranquilla</p>
+      <button>Button</button>
+    </div>
+
+    <div class="card">
+      <img src="../img/Image.png" alt="Logo Guardería">
+      <h3>Very short story</h3>
+      <p>Any text here whatever you'd like to say. Add as many sentences as needed, or keep it very short.</p>
+      <button>Button</button>
+    </div>
+
+    <div class="card">
+      <img src="../img/Image.png" alt="Logo Guardería">
+      <h3>Huellas felices</h3>
+      <p>Cll 93, #42-106, Barrio Mercedes, Atlántico, La Mercedes, Barranquilla, Atlántico</p>
+      <button>Button</button>
+    </div>
+
+    <div class="card">
+      <img src="../img/Image.png" alt="Logo Guardería">
+      <h3>Prados caninos</h3>
+      <p>Cra. 46 #90 - 123, B/ro. Centro Histórico, Vía las Villas, Barranquilla</p>
+      <button>Button</button>
+    </div>
+
+    <div class="card">
+      <img src="../img/Image.png" alt="Logo Guardería">
+      <h3>Very short story</h3>
+      <p>Any text here whatever you'd like to say. Add as many sentences as needed, or keep it very short.</p>
+      <button>Button</button>
+    </div>
+
+    <div class="card">
+      <img src="../img/Image.png" alt="Logo Guardería">
+      <h3>Huellas felices</h3>
+      <p>Cll 93, #42-106, Barrio Mercedes, Atlántico, La Mercedes, Barranquilla, Atlántico</p>
+      <button>Button</button>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-about">
+    <h3>🐾 Sobre nosotros : PawCare </h3>
+    <p>
+conecta a dueños de mascotas con cuidadores, paseadores y amantes de los animales que ofrecen atención confiable, 
+como si fueran parte de tu familia, y te ayudamos a encontrar las mejores guarderias para tu animal.</p>
+  </div>
+
+    
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 PawCare - Todos los derechos reservados 🐶🐱</p>
+  </div>
+</footer>
 
 </body>
 </html>

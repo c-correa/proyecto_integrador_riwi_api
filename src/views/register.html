@@ -29,7 +29,7 @@
                     <div class="promo-text">
                         <h3>COMIENZA<br>TU EXPERIENCIA</h3>
                         <p>Haz que tu mascota sea feliz</p>
-                        <button class="ver-detalles-btn">Ver detalles</button>
+                   <a href="/index.html" class="ver-detalles-btn">Ver detalles </a>
                     </div>
                 </div>
             </div>
@@ -79,30 +79,13 @@
                             Registrarse
                         </button>
                         <div class="login-link">
-                            <p>¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+                            <p>¿Ya tienes cuenta? <a href="/src/views/login.html">Inicia sesión</a></p>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function togglePasswordRegister() {
-            const passwordInput = document.getElementById('password-register');
-            const eyeShow = document.getElementById('eye-show-register');
-            const eyeHide = document.getElementById('eye-hide-register');
-            
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                eyeShow.classList.add('hidden');
-                eyeHide.classList.remove('hidden');
-            } else {
-                passwordInput.type = 'password';
-                eyeShow.classList.remove('hidden');
-                eyeHide.classList.add('hidden');
-            }
-        }
-    </script>
+<script src="/src/js/register.js"></script>
 </body>
 </html>

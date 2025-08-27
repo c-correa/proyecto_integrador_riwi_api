@@ -217,24 +217,6 @@ body {
     border-color: #20b2aa;
 }
 
-.password-input {
-    position: relative;
-}
-
-.password-input input {
-    padding-right: 50px;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-}
 
 .eye-icon {
     width: 20px;
@@ -250,22 +232,6 @@ body {
 
 .hidden {
     display: none;
-}
-
-.forgot-password {
-    text-align: right;
-    margin-top: -10px;
-}
-
-.forgot-password a {
-    color: #20b2aa;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.forgot-password a:hover {
-    color: #17a2b8;
 }
 
 .login-button {
@@ -577,24 +543,6 @@ body {
     border-color: #20b2aa;
 }
 
-.password-input {
-    position: relative;
-}
-
-.password-input input {
-    padding-right: 50px;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-}
 
 .eye-icon {
     width: 20px;
@@ -703,4 +651,36 @@ body {
     .register-title {
         font-size: 32px;
     }
+}
+
+.password-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.password-input input {
+  width: 100%;
+  padding-right: 40px; /* espacio para el icono */
+  box-sizing: border-box;
+}
+
+.password-input .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* distancia del borde derecho */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.password-input .eye-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hidden {
+  display: none;
 }
