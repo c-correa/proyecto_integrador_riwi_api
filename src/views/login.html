@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawCare</title>
+    <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sección izquierda -->
+        <div class="left-section">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="/public/img/file_00000000749861f89afa72857b0d7f69.png" alt="PawCare Logo" class="logo">
+                    <h1>PawCare</h1>
+                </div>
+            </div>
+
+            <div class="brand-section">
+                <h2 class="brand-title">PAWCARE</h2>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-content">
+                    <img src="/public/img/artemisa_2.webp" alt="Mascota PawCare" class="mascot">
+                    <div class="promo-text">
+                        <h3>DALE UN VISTAZO</h3>
+                        <p>Ayúdanos a cuidar a tu amigo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-content">
+                    <img src="/public/img/file_00000000749861f89afa72857b0d7f69.png" alt="PawCare Logo" class="footer-logo">
+                    <span class="copyright">© 2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección derecha -->
+        <div class="right-section">
+            <div class="login-overlay">
+                <div class="login-card">
+                    <h2>Inicia sesión en PawCare!</h2>
+                    <p>Accede a tu cuenta y gestiona fácilmente tus reservas</p>
+
+                    <form class="login-form">
+                        <div class="form-group">
+                            <label for="username">Usuario</label>
+                            <input type="text" id="username" name="username" placeholder="Johndoe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <div class="password-input">
+                                <input type="password" id="password" name="password" placeholder="8547_John_doe">
+                                <button type="button" class="toggle-password" onclick="togglePassword()">
+                                    <img src="/public/img/eye-fill.svg" alt="Mostrar contraseña" class="eye-icon" id="eye-show">
+                                    <img src="/public/img/eye-slash.svg" alt="Ocultar contraseña" class="eye-icon hidden" id="eye-hide">
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="login-button">
+                            Iniciar sesión
+                        </button>
+                        <div class="register-link">
+                            <p>¿No tienes cuenta? <a href="/src/views/register.html">Regístrate aquí</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/js/login.js"> </script>
+</body>
+</html>
