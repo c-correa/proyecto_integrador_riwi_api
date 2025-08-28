@@ -216,3 +216,17 @@ body {
   }
 }
 
+.btn-buscar {
+  display: inline-block;
+  background-color: #2a9d8f; /* verde o el color que uses */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-buscar:hover {
+  background-color: #21867a; /* tono más oscuro al pasar el mouse */
+}
