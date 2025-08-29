@@ -2,22 +2,12 @@ import { DataTypes, Model } from "sequelize";
 import { initModel } from "../../utils/initModel.mjs";
 import { Departament } from "../../departament/model/departament.model.mjs";
 
-export class Owner extends Model {
-  id;
-  full_name;
-  email;
-  phone;
-  is_active;
-  created_at;
-  updated_at;
-  deleted_at;
-  departament_id;
-}
+export class Owner extends Model {}
 
+// Inicialización del modelo
 initModel(
   Owner,
   {
-   
     full_name: {
       type: DataTypes.STRING(150),
       allowNull: false,
@@ -28,6 +18,10 @@ initModel(
       unique: true,
     },
     phone: {
+      type: DataTypes.STRING(20),
+      allowNull: true,
+    },
+    password: {
       type: DataTypes.STRING(20),
       allowNull: true,
     },
@@ -53,12 +47,12 @@ initModel(
       type: DataTypes.BIGINT,
       allowNull: true,
       references: {
-        model: "departaments", // 👈 plural, snake_case
+        model: "departaments", // 👈 nombre de la tabla referenciada
         key: "id",
       },
     },
   },
-  "owners" // 👈 tabla plural, snake_case
+  "owners" // 👈 nombre de la tabla
 );
 
 // 🔗 Relaciones

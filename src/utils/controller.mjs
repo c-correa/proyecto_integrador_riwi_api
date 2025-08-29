@@ -1,26 +1,17 @@
-
-
 export function controller(cb) {
-	return (req, res) => {
-		cb(req, res).catch((error) => {
-			if (error) {
-				res.status(500).send({ name: "ServerError", message: "server error" });
-			}
+  return (req, res) => {
+    cb(req, res).catch((error) => {
+      if (res.headersSent) {
+        console.error("Respuesta ya enviada. Error:", error);
+        return; // ✅ no intentes responder otra vez
+      }
 
-			const name = error.name;
-			const message = error.message;
-			const stack = error.stack;
-			const status = error.status;
-
-			if (status && status >= 300 && status < 600) {
-				res.status(status).send({ name, message, stack });
-			} else {
-				res.status(500).send({
-					name: "ServerError",
-					message: error.message || "server error",
-					stack,
-				});
-			}
-		});
-	};
+      const status = error.status || 500;
+      return res.status(status).json({
+        name: error.name || "ServerError",
+        message: error.message || "server error",
+        stack: error.stack,
+      });
+    });
+  };
 }
