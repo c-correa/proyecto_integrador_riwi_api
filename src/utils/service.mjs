@@ -19,12 +19,12 @@ export default class Service {
     return record;
   }
 
-    async findOneBy(optionsWhere) {
-    const record = await this.model.findOne(...optionsWhere);
+async findOneBy(optionsWhere) {
+  const record = await this.model.findOne(optionsWhere);
+  if (!record || record.deleted_at) return null;
+  return record;
+}
 
-    if (record || record.deleted_at) return null;
-    return record;
-  }
 
   async findAll() {
     return await this.model.findAll({

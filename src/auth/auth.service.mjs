@@ -5,22 +5,16 @@ import { v4 as uuidv4 } from "uuid";
 
 class AuthService extends Service {
   async login(email, password) {
-    const [record] = await this.findOneBy({ where: email });
-    if (record.password !== password) throw new Error("not found")
-    await this.create({
+    const record = await ownerService.findOneBy({ where: {email} });
+if (!record || record.password !== password) {
+  throw new Error("not found");
+}
+
+   return await this.create({
       access_token: uuidv4(),
       refresh_token: uuidv4(),
       owner_id: record.id,
     });
-    return {ok: true}
-  }
-
-    async create(data) {
-    const [record] = await this.findOneBy({ where: email });
-    if (record) throw new Error("usuario exite")
-
-    await ownerService.create(data);
-    return {ok: true}
   }
 }
 

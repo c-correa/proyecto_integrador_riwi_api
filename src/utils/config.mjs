@@ -9,11 +9,11 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: "postgres",
     port: process.env.DB_PORT,
-    logging: console.log, // cámbialo a false en prod
+    // logging: console.log, // cámbialo a false en prod
     dialectOptions: {
       ssl: {
-        require: true,   // 🔒 fuerza el uso de SSL
-        rejectUnauthorized: false, // 🔑 necesario si usas certs self-signed
+        require: true,  
+        rejectUnauthorized: false,
       },
     },
   }
