@@ -7,6 +7,7 @@ import ownerRoutes from "./owners/owners.router.mjs";
 import storesRoutes from "./stores/stores.router.mjs";
 import publicationsRoutes from "./publications/publications.router.mjs";
 import storesBranchRoutes from "./storesBranch/storesBranch.router.mjs";
+import auth from "./auth/auth.router.mjs";
 
 // Inicializa app
 const app = express();
@@ -31,8 +32,9 @@ app.use((req, res, next) => {
 app.use("/owners", ownerRoutes);
 app.use("/stores", storesRoutes);
 app.use("/publications", publicationsRoutes);
-// ⚠️ corregido: ahora coincide con el cliente
 app.use("/store-branches", storesBranchRoutes);
+app.use("/auth", auth);
+
 
 // 🛑 Manejo global de errores (por si algo se escapa)
 app.use((err, req, res, next) => {

@@ -3,7 +3,7 @@ export function controller(cb) {
     cb(req, res).catch((error) => {
       if (res.headersSent) {
         console.error("Respuesta ya enviada. Error:", error);
-        return; // ✅ no intentes responder otra vez
+        return;
       }
 
       const status = error.status || 500;
