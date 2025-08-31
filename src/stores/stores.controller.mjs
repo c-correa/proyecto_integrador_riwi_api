@@ -6,8 +6,11 @@ export async function findAll(req, res) {
 }
 
 export async function findOne(req, res) {
+    
     const { id } = req.params
     const record = await storesService.findOne(+id)
+
+    console.log(12,record);
     return res.json(record)
 }
 

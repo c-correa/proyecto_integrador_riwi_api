@@ -5,9 +5,17 @@ export async function findAll(req, res) {
     return res.json(records)
 }
 
+export async function findAllByStore(req, res) {
+    const {id} = req.params
+    const records = await storesBranchService.getAllByStore(id)
+    return res.json(records)
+}
+
 export async function findOne(req, res) {
     const { id } = req.params
     const record = await storesBranchService.findOne(+id)
+    console.log(3, record);
+    
     return res.json(record)
 }
 

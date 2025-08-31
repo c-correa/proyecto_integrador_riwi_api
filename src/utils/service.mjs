@@ -15,7 +15,10 @@ export default class Service {
 
   async findOne(id) {
     const record = await this.model.findByPk(id);
-    if (record || record.deleted_at) return null;
+    console.log(66, record);
+    console.log(66, record.deleted_at);
+    
+    if (!record || record.deleted_at) return null;
     return record;
   }
 
