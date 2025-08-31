@@ -15,9 +15,6 @@ export default class Service {
 
   async findOne(id) {
     const record = await this.model.findByPk(id);
-    console.log(66, record);
-    console.log(66, record.deleted_at);
-    
     if (!record || record.deleted_at) return null;
     return record;
   }
@@ -36,8 +33,7 @@ async findOneBy(optionsWhere) {
   }
 
   async update(id, data) {
-    const record = await this.model.findByPk(id);
-    if (record || record.deleted_at) throw new Error('Record not found');
+    const record = await this.findOne(id);
 
     await record.update({
       ...data,

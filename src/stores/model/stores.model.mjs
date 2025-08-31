@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import { Owner } from "../../owners/model/owners.model.mjs";
-import {initModel} from "../../utils/initModel.mjs"
+import { initModel } from "../../utils/initModel.mjs";
 
 export class Store extends Model {
   id;
@@ -11,12 +11,19 @@ export class Store extends Model {
   updated_at;
   deleted_at;
   owner_id;
+
+  // Nuevos campos
+  business_name;
+  tax_id;
+  business_license;
+  main_address;
+  official_phone;
+  official_email;
 }
 
 initModel(
   Store,
   {
-   
     name: {
       type: DataTypes.STRING(100),
       allowNull: false,
@@ -46,14 +53,43 @@ initModel(
     },
     owner_id: {
       type: DataTypes.BIGINT,
-      allowNull: true, // 👈 puede ser nulo
+      allowNull: true,
       references: {
-        model: "owners", // 👈 plural, snake_case
+        model: "owners",
         key: "id",
       },
     },
+
+    // ⚖️ Campos legales/administrativos (en inglés ahora)
+    business_name: {
+      type: DataTypes.STRING(150),
+      allowNull: true,
+    },
+    tax_id: {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+    },
+    business_license: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+    main_address: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+    },
+    official_phone: {
+      type: DataTypes.STRING(20),
+      allowNull: true,
+    },
+    official_email: {
+      type: DataTypes.STRING(150),
+      allowNull: true,
+      validate: {
+        isEmail: true,
+      },
+    },
   },
-  "stores" // 👈 plural, snake_case
+  "stores"
 );
 
 // 🔗 Relaciones
