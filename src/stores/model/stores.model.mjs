@@ -1,6 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import { Owner } from "../../owners/model/owners.model.mjs";
 import { initModel } from "../../utils/initModel.mjs";
+import { Departament } from "../../departament/model/departament.model.mjs";
 
 export class Store extends Model {
   id;
@@ -60,7 +61,6 @@ initModel(
       },
     },
 
-    // ⚖️ Campos legales/administrativos (en inglés ahora)
     business_name: {
       type: DataTypes.STRING(150),
       allowNull: true,
@@ -102,3 +102,15 @@ Owner.hasMany(Store, {
   foreignKey: "owner_id",
   as: "stores",
 });
+
+// 🔗 Relaciones
+Store.belongsTo(Departament, {
+  foreignKey: "department_id",
+  as: "department",
+});
+
+Departament.hasMany(Store, {
+  foreignKey: "department_id",
+  as: "stores",
+});
+

@@ -1,29 +1,28 @@
-import { departament } from "./await departament.service.mjs";
-
+import { departamentService } from  "./departament.service.mjs"
 export async function findAll(req, res) {
-    const records = await departament.findAll()
+    const records = await departamentService.findAll()
     return res.json(records)
 }
 
 export async function findOne(req, res) {
     const { id } = req.params
-    const record = await departament.findOne(+id)
+    const record = await departamentService.findOne(+id)
     return res.json(record)
 }
 
 export async function create(req, res) {
-    await departament.create(req.body)
+    await departamentService.create(req.body)
     return res.status(201).json({message: 'Product created successfully'})
 }
 
 export async function remove(req, res) {
     const { id } = req.params
-    await departament.delete(+id)
+    await departamentService.delete(+id)
     return res.status(201).json({message: 'Product removed successfully'})
 }
 
 export async function update(req, res) {
     const { id } = req.params
-    const record = await await departament.update(+id, req.body)
+    const record = await await departamentService.update(+id, req.body)
     return res.status(201).json({message: 'Product updated successfully', data: record})
 }

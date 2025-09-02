@@ -7,6 +7,7 @@ import storesRoutes from "./stores/stores.router.mjs";
 import publicationsRoutes from "./publications/publications.router.mjs";
 import storesBranchRoutes from "./storesBranch/storesBranch.router.mjs";
 import auth from "./auth/auth.router.mjs";
+import departments from "./departament/departament.router.mjs";
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use("/stores", storesRoutes);
 app.use("/publications", publicationsRoutes);
 app.use("/store-branches", storesBranchRoutes);
 app.use("/auth", auth);
+app.use("/departments", departments);
 
 
 const PORT = process.env.PORT || 3000;
@@ -35,6 +37,7 @@ async function main() {
 
     await sequelize.sync({
       alter: true,
+      // force: true
       // logging: console.log, 
     });
     console.log("Modelos sincronizados correctamente");

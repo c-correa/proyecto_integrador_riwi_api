@@ -22,18 +22,6 @@ initModel(
       allowNull: false,
       unique: true,
     },
-    description: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     is_active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
