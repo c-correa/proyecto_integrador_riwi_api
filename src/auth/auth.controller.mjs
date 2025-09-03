@@ -1,5 +1,7 @@
-import { authService } from "./auth.service.mjs";
-
+// Cambiar por:
+import { AuthService } from "./auth.service.mjs";
+// O si es export default:
+import AuthService from "./auth.service.mjs";
 export async function login(req, res) {
     // Agregar manejo de errores:
     try {
