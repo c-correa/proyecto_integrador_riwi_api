@@ -12,8 +12,8 @@ export async function findOne(req, res) {
 }
 
 export async function create(req, res) {
-    await ownerService.create(req.body) 
-    return res.status(201).json({message: 'Product created successfully'})
+    const record = await ownerService.create(req.body) 
+    return res.status(201).json({data: record})
 }
 
 export async function remove(req, res) {

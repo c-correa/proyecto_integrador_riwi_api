@@ -20,7 +20,7 @@ initModel(
   {
     name: {
       type: DataTypes.STRING(100),
-      allowNull: false,
+      allowNull: true,
       unique: true,
     },
     description: {
@@ -38,7 +38,7 @@ initModel(
     is_active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true,
+      defaultValue: false,
     },
     created_at: {
       type: DataTypes.DATE,
