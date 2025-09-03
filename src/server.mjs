@@ -12,13 +12,27 @@ import departments from "./departament/departament.router.mjs";
 const app = express();
 
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PATCH", "DELETE"],
-  credentials: true
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:4173", 
+    "https://proyecto-integrador-riwi-web-prod.onrender.com",
+    "*"
+  ],
+  methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization", "Accept"]
 }));
 
 app.use(express.json());
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({ 
+    status: "OK", 
+    message: "Backend funcionando correctamente",
+    timestamp: new Date().toISOString()
+  });
+});
 
 app.use("/owners", ownerRoutes);
 app.use("/stores", storesRoutes);
