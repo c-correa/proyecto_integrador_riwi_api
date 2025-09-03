@@ -4,7 +4,6 @@ import sequelize from "./utils/config.mjs";
 
 import ownerRoutes from "./owners/owners.router.mjs";
 import storesRoutes from "./stores/stores.router.mjs";
-import publicationsRoutes from "./publications/publications.router.mjs";
 import storesBranchRoutes from "./storesBranch/storesBranch.router.mjs";
 import auth from "./auth/auth.router.mjs";
 import departments from "./departament/departament.router.mjs";
@@ -22,7 +21,6 @@ app.use(express.json());
 
 app.use("/owners", ownerRoutes);
 app.use("/stores", storesRoutes);
-app.use("/publications", publicationsRoutes);
 app.use("/store-branches", storesBranchRoutes);
 app.use("/auth", auth);
 app.use("/departments", departments);

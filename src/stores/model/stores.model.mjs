@@ -37,7 +37,7 @@ initModel(
     is_active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true,
+      defaultValue: false,
     },
     created_at: {
       type: DataTypes.DATE,
@@ -59,11 +59,6 @@ initModel(
         model: "owners",
         key: "id",
       },
-    },
-
-    business_name: {
-      type: DataTypes.STRING(150),
-      allowNull: true,
     },
     tax_id: {
       type: DataTypes.STRING(50),

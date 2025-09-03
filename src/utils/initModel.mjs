@@ -31,10 +31,10 @@ export function initModel(
     }, {
         sequelize,
         tableName,
-        timestamps: true,
-        createdAt: "created_at",
-        updatedAt: "updated_at",
-        deletedAt: "deleted_at",
-        paranoid: true,
+            timestamps: true, // Sequelize crea y maneja created_at / updated_at
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: "deleted_at",
+    paranoid: true,
     });
 }
