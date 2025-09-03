@@ -16,6 +16,7 @@ app.use(cors({
     "http://localhost:5173",
     "http://localhost:4173", 
     "https://proyecto-integrador-riwi-web-prod.onrender.com",
+    "https://proyecto-integrador-riwi-web.onrender.com",
     "*"
   ],
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
